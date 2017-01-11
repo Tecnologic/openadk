@@ -4,13 +4,13 @@
 include $(ADK_TOPDIR)/rules.mk
 
 PKG_NAME:=		afboot-stm32
-PKG_VERSION:=		f7f109f0c6f65534ae50f9243a7356c5002a9b87
+PKG_VERSION:=		8e9e03159ce47629d40dbed4c50c1879b69bb197
 PKG_RELEASE:=		1
 PKG_DESCR:=		bootloader for stm32 devices
 PKG_SECTION:=		base/boot
 PKG_SITES:=		https://github.com/mcoquelin-stm32/afboot-stm32.git
 
-PKG_SYSTEM_DEPENDS:=	st-stm32f429
+PKG_SYSTEM_DEPENDS:=	st-stm32f429 st-stm32f769
 
 include $(ADK_TOPDIR)/mk/package.mk
 
@@ -20,6 +20,6 @@ CONFIG_STYLE:=		manual
 INSTALL_STYLE:=		manual
 
 afboot-stm32-install:
-	$(CP) $(WRKBUILD)/stm32f429i-disco.bin $(FW_DIR)
+	$(CP) $(WRKBUILD)/stm32746g-eval.bin $(FW_DIR)
 
 include $(ADK_TOPDIR)/mk/pkg-bottom.mk
