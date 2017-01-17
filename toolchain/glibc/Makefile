@@ -52,7 +52,6 @@ GLIBC_ENV:=             PATH='${TARGET_PATH}' \
                         AR="${TARGET_AR}" \
                         RANLIB="${TARGET_RANLIB}" \
                         libc_cv_forced_unwind=yes \
-			libc_cv_cc_with_libunwind=yes \
                         libc_cv_c_cleanup=yes \
                         libc_cv_gnu99_inline=yes \
 			libc_cv_initfini_array=yes
@@ -78,7 +77,7 @@ $(WRKBUILD)/.configured:
 	touch $@
 
 $(WRKBUILD)/.compiled:
-	${GLIBC_ENV} $(MAKE) ${GLIBC_MAKEOPTS} asm-CPPFLAGS='$${CFLAGS}' -C $(GLIBC_BUILD_DIR_FINAL) all
+	${GLIBC_ENV} $(MAKE) ${GLIBC_MAKEOPTS} -C $(GLIBC_BUILD_DIR_FINAL) all
 	touch $@
 
 $(WRKBUILD)/.installed:
