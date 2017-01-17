@@ -34,6 +34,6 @@ config ADK_TARGET_FLOAT
 	string
 	depends on !ADK_TARGET_ARCH_M68K \
 		&& !ADK_TARGET_ARCH_NIOS2
-	default "hard" if ADK_TARGET_HARD_FLOAT
+	default "hard" if ADK_TARGET_HARD_FLOAT || ADK_TARGET_HARD_FLOAT_SP || ADK_TARGET_HARD_FLOAT_DP
 	default "soft" if ADK_TARGET_SOFT_FLOAT
 	default "softfp" if ADK_TARGET_SOFTFP_FLOAT
