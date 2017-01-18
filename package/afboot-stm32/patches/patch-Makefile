@@ -17,7 +17,7 @@
  
 -CFLAGS := -mthumb -mcpu=cortex-m4
 +CFLAGS ?= 
-+CFLAGS += -mthumb -mcpu=cortex-m7
++CFLAGS += -mthumb -mcpu=cortex-m4
  CFLAGS += -ffunction-sections -fdata-sections
  CFLAGS += -Os -std=gnu99 -Wall
  LINKERFLAGS := -nostartfiles --gc-sections
