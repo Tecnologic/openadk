@@ -20,6 +20,11 @@ CONFIG_STYLE:=		manual
 INSTALL_STYLE:=		manual
 
 afboot-stm32-install:
+ifeq ($(ADK_TARGET_SYSTEM_ST_STM32F429),y)
+	$(CP) $(WRKBUILD)/stm32f429i-disco.bin $(FW_DIR)
+endif
+ifeq ($(ADK_TARGET_SYSTEM_ST_STM32F769),y)
 	$(CP) $(WRKBUILD)/stm32746g-eval.bin $(FW_DIR)
+endif
 
 include $(ADK_TOPDIR)/mk/pkg-bottom.mk

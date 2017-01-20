@@ -20,7 +20,7 @@ config ADK_TARGET_HARD_FLOAT_SP
 config ADK_TARGET_HARD_FLOAT_DP
 	bool "hard-float-double-precision"
 	depends on ADK_TARGET_CPU_WITH_FPU && ADK_TARGET_CPU_WITH_FPU_FPV5
-	
+
 config ADK_TARGET_SOFT_FLOAT
 	bool "soft-float"
 
